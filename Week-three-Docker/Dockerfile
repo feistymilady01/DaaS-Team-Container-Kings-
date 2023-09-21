@@ -1,4 +1,5 @@
-FROM nodejs:18-alpine3
+# Use an official Node.js 18 image as the base image
+FROM node:18-alpine
 
 WORKDIR /app
 
@@ -18,4 +19,4 @@ RUN npm ci
 # Bundle app source
 COPY . .
 EXPOSE 8080
-CMD [ "node", "server.js" ]
+CMD [ "node", "index.js" ]
